@@ -3,6 +3,7 @@ import { signup } from '../controllers/user.controller.js';
 
 const router = express.Router();
 
-router.post("/signup", signup);
+// only "/"
+router.post("/", signup);
 
-export default router;   // ✅ FIXED
+export default router;
