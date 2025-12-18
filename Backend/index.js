@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import userRoute from "./routes/user.route.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+import messagesroute from "./routes/message.route.js";
 dotenv.config();
 
 const app = express();
@@ -22,6 +22,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/users", userRoute);
+app.use("/message", messagesroute);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
